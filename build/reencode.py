@@ -1,7 +1,7 @@
 """Re-encode images the directory's scanner flagged (random bytes that look like a shell pattern).
 Usage: python3 build/reencode.py <path inside plugin/examples/>...
 Writes the re-encoded copy to renders/ (which build.mjs copies over examples/), without metadata.
-A JPEG is saved one quality step lower each time; a PNG is re-compressed."""
+A JPEG is saved one quality step lower each time, progressive from the second time (a different byte layout); a PNG is re-compressed."""
 import os, sys
 from PIL import Image
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -17,7 +17,7 @@ for rel in sys.argv[1:]:
     os.makedirs(os.path.dirname(out), exist_ok=True)
     if rel.lower().endswith(('.jpg', '.jpeg')):
         q = int(open(out + '.q').read()) - 2 if os.path.exists(out + '.q') else 78
-        clean.convert('RGB').save(out, quality=q, optimize=True)
+        clean.convert('RGB').save(out, quality=q, optimize=True, progressive=q < 78)
         open(out + '.q', 'w').write(str(q))
     else:
         clean.save(out, optimize=True, compress_level=6)
