@@ -122,8 +122,8 @@ if (runRules.length) {
 // 5. plugin.json from the kit's, without fields this edition doesn't use.
 const kit = JSON.parse(fs.readFileSync(S('.claude-plugin/plugin.json'), 'utf8'));
 const manifest = { name: kit.name, version: kit.version, description: kit.description, author: kit.author, homepage: kit.homepage, repository: kit.repository, license: kit.license, keywords: kit.keywords };
-if (fs.existsSync(path.join(root, 'assets/icon.png'))) { fs.copyFileSync(path.join(root, 'assets/icon.png'), O('.claude-plugin/icon.png')); }
 write(O('.claude-plugin/plugin.json'), `${JSON.stringify(manifest, null, 2)}\n`);
+if (fs.existsSync(path.join(root, 'assets/icon.png'))) { fs.copyFileSync(path.join(root, 'assets/icon.png'), O('.claude-plugin/icon.png')); }
 write(O('BUILD.md'), `# Build\n\nBuilt from AIspy ${tag} (commit ${commit}) by the aispy-plugin build.\n`);
 
 // 6. Example screens.
