@@ -21,7 +21,7 @@ const CMD = [
   /(^|`|\$\s*)(node|python3?|bash|sh|deno|bun)\s+[\w./<>-]+\.(mjs|cjs|js|ts|py|sh)\b/,
   /\bregistry\s*=|--registry\b|index-url/,
 ];
-const PLUGIN_FIELDS = new Set(['name', 'version', 'description', 'author', 'homepage', 'repository', 'license', 'keywords', 'icon', 'skills', 'commands', 'agents']);
+const PLUGIN_FIELDS = new Set(['name', 'version', 'description', 'author', 'homepage', 'repository', 'license', 'keywords', 'icon', 'skills', 'commands', 'agents', 'supportUrl', 'documentationUrl', 'privacyPolicyUrl', 'termsOfServiceUrl']);
 
 let errors = 0; let warnings = 0;
 const err = (m) => { console.log(`✗ ${m}`); errors++; };
