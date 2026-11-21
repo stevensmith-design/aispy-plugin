@@ -1,3 +1,3 @@
 # Build
 
-Built from AIspy v0.8.8 (commit 6459c8010b7778842da69fd748f68dd76ece27dc) by the aispy-plugin build.
+Built from AIspy v0.8.10 (commit 9196cebff39c4566c6e40c392799dbb9f9975cb2) by the aispy-plugin build.

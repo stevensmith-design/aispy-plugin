@@ -19,7 +19,7 @@ it and `SKILL.md` differ, this file wins.
 
 | `SKILL.md` says | In this edition |
 |---|---|
-| `skills/design-kit/<skill>/` | `skills/<skill>/` (same six skills, same names) |
+| `skills/design-kit/<skill>/` | `skills/<skill>/` in this plugin (`aispy:<skill>`). Use these copies, not same-named skills installed elsewhere |
 | `templates/<file>.html`, `.css`, `.js` | `templates/<file>.<ext>.md`: the file's exact source in one fenced block. Write the block's contents, unchanged, to `07-deliverables/src/<file>.<ext>` |
 | `examples/mareo/<doc>.html` | `examples/mareo/<doc>.html.md` (the document's markup and text, images removed) plus the images in `examples/mareo/screens` that start with the document's name (how it renders, one image per section) |
 | `examples/brolga/<doc>.html` | the same pattern in `examples/brolga/` |

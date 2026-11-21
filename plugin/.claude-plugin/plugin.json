@@ -1,6 +1,6 @@
 {
   "name": "aispy",
-  "version": "0.8.8",
+  "version": "0.8.10",
   "description": "UX/UI/IA review of a live website or app, with an optional market-localisation layer: review report, IA analysis, current-vs-proposed mock and index page, styled in the product's own design system.",
   "author": {
     "name": "Steven Smith",

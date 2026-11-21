@@ -10,7 +10,7 @@ description: >
   improvements", or pastes a request asking for one. Starts from a bare URL: it asks for what it needs in one batch, with
   defaults. Not for reviewing a screen Claude just built or a single PR (use ui-design-review).
 metadata:
-  version: 0.8.8
+  version: 0.8.10
 ---
 
 > **Plugin edition.** This is AIspy's plugin-directory edition. Before anything else, read
@@ -49,7 +49,7 @@ Don't polish before the person has seen it.
 - **Setup check (two minutes, before anything else).** Confirm, and note in the run log:
   1. you have the person's go-ahead to start separate agents, and you can. Many sessions only
      start agents when the person asks for them, so if the request doesn't already say so, ask
-     once at intake: "This review runs its three lenses and two checks as separate agents, so
+     now, before intake: "This review runs its three lenses and two checks as separate agents, so
      they're independent. OK to start them?" Then start a trivial one and see it return;
   2. a browser reaches the site in scope;
   3. a scripted browser can take screenshots (for `annotate.mjs` and captures);
@@ -64,15 +64,18 @@ Don't polish before the person has seen it.
 - **Agents.** The three lenses and every independent review run as separate agents. Never call a
   check independent if it ran in your own context.
 - **Kit skills** (bundled in `skills/design-kit/`): `ui-design-system`, `ui-design-review`,
-  `ia-review`, `design-refine`, `ui-design-principles`, `distinctiveness-review`. If the kit's
-  install or lock check fails, note it once and carry on.
+  `ia-review`, `design-refine`, `ui-design-principles`, `distinctiveness-review`. These are the
+  copies in `skills/design-kit/` (from the pack root). Use them by path, not same-named skills
+  installed elsewhere.
 - **Pack paths.** `scripts/…` paths are relative to the pack root, two folders above this file
   (`../../` from `skills/product-review/`); `references/` and `templates/` sit beside this file.
-- **Files.** Work in one folder, `review/<product>-<date>/`, inside the folder the person
-  connected. Keep a short `run-log.md`: what ran, what didn't, which agents were started (with
-  what input), the start and end time of each phase (read from the clock when it happens, never
-  estimated afterwards), and anything dropped between drafts, with the reason. **Before every stop, the
-  deliverables must be in that folder**, not only in your own workspace.
+- **Files.** Work in one folder, `review/<product>-<date>/`, inside the folder the person connected
+  (in a terminal session, the folder Claude was started in). If the product isn't settled at setup,
+  name the folder from the site's URL and keep that name for the whole run. Keep a short
+  `run-log.md`: what ran, what didn't, which agents were started (with what input), the start and
+  end time of each phase (read from the clock when it happens, never estimated afterwards), and
+  anything dropped between drafts, with the reason. **Before every stop, the deliverables must be in
+  that folder**, not only in your own workspace.
 - **Don't** add to cart, enter personal or payment data, sign in for the person, or publish
   anything. For logged-in areas, the person signs in in the browser themselves. Never use
   another client's name, screenshots or content in any output.
