@@ -1,0 +1,24 @@
+{
+  "brand": {
+    "name": "Mareo",
+    "aestheticCommitment": "Mareo furnishes small Japanese homes with plain, well-made sofas: navy actions on the warm cream of its own product photography, one terracotta accent taken from the fabric range, Japanese text set with room to breathe, and nothing on the page that does not help someone choose.",
+    "register": "brand_ui",
+    "platform": "mobile web storefront, Japan",
+    "audience": "Adults in Japan furnishing a one- or two-room home, choosing a sofa on a phone"
+  },
+  "colour": {
+    "anchor": { "hue": 262, "chroma": 0.07 },
+    "neutral": { "hue": 85, "chroma": 0.014 },
+    "ground": "light",
+    "onAnchor": "#FFFFFF",
+    "inkLightness": 0.25
+  },
+  "type": {
+    "display": "Jost, 'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif",
+    "body": "'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif",
+    "discipline": "Jost only for the MAREO wordmark and Latin product names; every Japanese string in the Japanese stack at line-height 1.7, tracking 0 to +0.02em, with phrase-aware line breaks (word-break: auto-phrase, keep-all fallback)",
+    "baseSize": 15,
+    "scaleRatio": 1.25
+  },
+  "shape": { "radiusBase": 6 }
+}

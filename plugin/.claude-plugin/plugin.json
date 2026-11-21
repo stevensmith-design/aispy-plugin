@@ -1,0 +1,20 @@
+{
+  "name": "aispy",
+  "version": "0.8.8",
+  "description": "UX/UI/IA review of a live website or app, with an optional market-localisation layer: review report, IA analysis, current-vs-proposed mock and index page, styled in the product's own design system.",
+  "author": {
+    "name": "Steven Smith",
+    "url": "https://stevensmith.dev"
+  },
+  "homepage": "https://stevensmith.dev/aispy",
+  "repository": "https://github.com/stevensmith-design/aispy",
+  "license": "MIT",
+  "keywords": [
+    "ux-review",
+    "ui-review",
+    "ia-review",
+    "design-review",
+    "localisation",
+    "claude-code"
+  ]
+}
