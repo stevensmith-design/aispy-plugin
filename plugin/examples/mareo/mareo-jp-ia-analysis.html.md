@@ -1,6 +1,6 @@
 # mareo-jp-ia-analysis.html
 
-The markup and text of `examples/mareo/mareo-jp-ia-analysis.html`, with its embedded images removed. How it renders: `screens/mareo-jp-ia-analysis--*.jpg`.
+The markup and text of `examples/mareo/mareo-jp-ia-analysis.html`, with its embedded images removed. How it renders: the images in the `screens` folder whose names start with this document's name.
 
 ```html
 <!DOCTYPE html>

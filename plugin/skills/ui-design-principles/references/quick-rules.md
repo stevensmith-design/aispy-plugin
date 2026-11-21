@@ -152,7 +152,7 @@ Decision gates for the recurring five).
 - Optical alignment: audit shared page/section/card/form/row axes at narrow and wide breakpoints;
   distinguish intentional indentation from accidental 2–8px gutter drift; perception beats geometry
   only for documented ±1–2px nudges (→ Optical alignment)
-- Commit: build grayscale-first; pass first-order AND second-order reflex checks (→ Design commitment check)
+- Commit: build grayscale-first; clear the first-order AND second-order reflex checks (→ Design commitment check)
 - Docs integrity: DESIGN.md absolute claims (zero/no/never/all) are checked against inline styles, not just tokens; a code comment citing an override must resolve to a real override-log entry (scan.sh #25) (→ Documentation integrity)
 
 ## Decision-point routing

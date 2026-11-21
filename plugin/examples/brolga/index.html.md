@@ -1,6 +1,6 @@
 # index.html
 
-The markup and text of `examples/brolga/index.html`, with its embedded images removed. How it renders: `screens/index--*.jpg`.
+The markup and text of `examples/brolga/index.html`, with its embedded images removed. How it renders: the images in the `screens` folder whose names start with this document's name.
 
 ```html
 <!DOCTYPE html>

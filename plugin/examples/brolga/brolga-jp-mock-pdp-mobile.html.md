@@ -1,6 +1,6 @@
 # brolga-jp-mock-pdp-mobile.html
 
-The markup and text of `examples/brolga/brolga-jp-mock-pdp-mobile.html`, with its embedded images removed. How it renders: `screens/brolga-jp-mock-pdp-mobile--*.jpg`.
+The markup and text of `examples/brolga/brolga-jp-mock-pdp-mobile.html`, with its embedded images removed. How it renders: the images in the `screens` folder whose names start with this document's name.
 
 ```html
 <!DOCTYPE html>

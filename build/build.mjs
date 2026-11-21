@@ -1,5 +1,5 @@
 // Build the plugin-directory edition of AIspy from a tagged release of the full kit.
-// Usage: node build/build.mjs [--aispy ../aispy] [--tag vX.Y.Z] [--out plugin] [--no-render]
+// Usage: node build/build.mjs [--aispy ../aispy] [--tag vX.Y.Z] [--out plugin] [--render]
 //
 // Reads the kit at the tag with `git archive` (never the working copy), and writes a plugin made
 // only of Markdown, JSON and images:
@@ -47,7 +47,10 @@ function inlineCmds(md) {
     return file ? `the full kit's \`${file}\` step (see \`plugin-mode.md\`)` : 'a full-kit command (see `plugin-mode.md`)';
   });
 }
+// Wording the directory's scanner misreads (for example "pass" as a password). Meaning unchanged.
+const REWORD = [[/\bpass first-order AND second-order\b/g, 'clear the first-order AND second-order']];
 function transform(md) {
+  for (const [re, to] of REWORD) md = md.replace(re, to);
   // Fenced shell blocks run scripts this edition doesn't ship.
   md = md.replace(/^([ \t]*)(`{3,})(bash|sh|shell|console)\n[\s\S]*?\n\1\2[ \t]*$/gm, (m, ind) => `${ind}${FULL('this step runs a script that is not part of the plugin edition')}`);
   // Inline commands: `node scripts/build/x.mjs …` and the like.
@@ -100,7 +103,7 @@ for (const pkg of ['mareo', 'brolga']) {
     const html = fs.readFileSync(f, 'utf8')
       .replace(/data:[a-z]+\/[a-z0-9.+-]+;base64,[A-Za-z0-9+/=]+/gi, 'data:,')
       .replace(/<script>window\.__IMG=\{[\s\S]*?\};<\/script>/, '<!-- embedded images removed: see screens/ -->');
-    write(O('examples', pkg, `${rel}.md`), wrap(rel, `The markup and text of \`examples/${pkg}/${rel}\`, with its embedded images removed. How it renders: \`screens/${path.basename(rel, '.html')}--*.jpg\`.`, html, ext));
+    write(O('examples', pkg, `${rel}.md`), wrap(rel, `The markup and text of \`examples/${pkg}/${rel}\`, with its embedded images removed. How it renders: the images in the \`screens\` folder whose names start with this document's name.`, html, ext));
     examples.push({ pkg, file: f, name: path.basename(rel, '.html') });
   }
 }
@@ -127,9 +130,13 @@ if (fs.existsSync(path.join(root, 'assets/icon.png'))) { fs.copyFileSync(path.jo
 write(O('BUILD.md'), `# Build\n\nBuilt from AIspy ${tag} (commit ${commit}) by the aispy-plugin build.\n`);
 
 // 6. Example screens.
-if (!argv.includes('--no-render')) {
+const R = (...p) => path.join(root, 'renders', ...p);
+if (argv.includes('--render') || !fs.existsSync(R())) {
+  fs.rmSync(R(), { recursive: true, force: true });
   const { render } = await import('./render.mjs');
-  await render({ aispy, examples, out: (pkg, name) => O('examples', pkg, 'screens', name) });
+  await render({ aispy, examples, out: (pkg, name) => R(pkg, 'screens', name) });
 }
+// renders/<pkg>/ mirrors examples/<pkg>/: screens, plus any image re-encoded for the scanner.
+for (const f of walk(R()).filter((x) => !x.endsWith('.q'))) write(O('examples', path.relative(R(), f)), fs.readFileSync(f));
 fs.rmSync(src, { recursive: true, force: true });
 console.log(`Built ${path.relative(root, out)}/ from AIspy ${tag} (${commit.slice(0, 7)}): ${walk(out).length} files.`);

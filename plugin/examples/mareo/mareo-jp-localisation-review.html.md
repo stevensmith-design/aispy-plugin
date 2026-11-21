@@ -1,6 +1,6 @@
 # mareo-jp-localisation-review.html
 
-The markup and text of `examples/mareo/mareo-jp-localisation-review.html`, with its embedded images removed. How it renders: `screens/mareo-jp-localisation-review--*.jpg`.
+The markup and text of `examples/mareo/mareo-jp-localisation-review.html`, with its embedded images removed. How it renders: the images in the `screens` folder whose names start with this document's name.
 
 ```html
 <!DOCTYPE html>

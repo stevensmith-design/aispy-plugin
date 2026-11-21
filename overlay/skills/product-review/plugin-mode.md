@@ -21,7 +21,7 @@ it and `SKILL.md` differ, this file wins.
 |---|---|
 | `skills/design-kit/<skill>/` | `skills/<skill>/` (same six skills, same names) |
 | `templates/<file>.html`, `.css`, `.js` | `templates/<file>.<ext>.md`: the file's exact source in one fenced block. Write the block's contents, unchanged, to `07-deliverables/src/<file>.<ext>` |
-| `examples/mareo/<doc>.html` | `examples/mareo/<doc>.html.md` (the document's markup and text, images removed) plus `examples/mareo/screens/<doc>--*.jpg` (how it renders, one image per section) |
+| `examples/mareo/<doc>.html` | `examples/mareo/<doc>.html.md` (the document's markup and text, images removed) plus the images in `examples/mareo/screens` that start with the document's name (how it renders, one image per section) |
 | `examples/brolga/<doc>.html` | the same pattern in `examples/brolga/` |
 | A block saying "Full kit only" | A script step; use the substitution in the table below |
 
