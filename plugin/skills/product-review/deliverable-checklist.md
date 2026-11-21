@@ -61,14 +61,18 @@ then compare them.
 ## Mock (`data-doc="mock"`)
 
 - [ ] The device section (`#device`) is present.
-- [ ] Every marker on the proposed side has a note, and every note has a marker.
-- [ ] Marker numbers exist as findings in the report (or the IA analysis). D markers are labelled
-      as design judgement.
-- [ ] Placeholders are listed; the logo's source is stated.
-- [ ] The current side carries its fixed-element layer (`.current .fixed`).
-- [ ] Each note is Now / Proposed (`p.now` + `p.then`), or title, paragraph and source line.
-- [ ] Every row of the mock spec that moves, removes or hides something names the entry point
-      that keeps it findable on the first screen.
+- [ ] At most 18 notes (aim for 10–15 changes, one marker per change; list the rest as not shown).
+- [ ] No sub-markers such as `3a`: a change that answers two findings uses one number and names both in its note.
+- [ ] Every marker on the proposed side (`#proposed .mk`) has a note (`.notes li > .k`), and every note has a marker.
+- [ ] The current side carries markers too, with the same numbers, on each problem as it is now (design proposals and pure additions may have none).
+- [ ] Numeric markers exist as findings in the report; prefixed markers (`N1`, `IA-3`) exist in the IA analysis or the report.
+- [ ] D markers are design proposals, and their notes say so.
+- [ ] Every other note cites the finding it implements, and is Now / Proposed (`p.now` + `p.then`), or a title, a paragraph and a source line.
+- [ ] Client-data placeholders are explained in the legend (`.legend`).
+- [ ] The logo declares where it came from with `data-asset="official"`, `"site"` or `"stand-in"`; a stand-in is noted in the legend.
+- [ ] The current side has its fixed-element layer (`.current .fixed`), or says the page has none (`class="fixed none"`).
+- [ ] No unfilled `{{fields}}`.
+- [ ] Every row of the mock spec that moves, removes or hides something names, in an "Entry point" column, the entry point that keeps it findable on the first screen.
 
 ## Then look
 
